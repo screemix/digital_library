@@ -35,12 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'mysite',
-=======
-    'crispy_forms',
-    'library',
->>>>>>> minor
 ]
 
 MIDDLEWARE = [
@@ -87,10 +82,6 @@ DATABASES = {
         'NAME': 'db',
         'USER': 'postgres',
         'HOST': '127.0.0.1',
-<<<<<<< HEAD
-=======
-        'HOST': '127.0.0.1',
->>>>>>> minor
         'PORT': '5433',
     }
 }
