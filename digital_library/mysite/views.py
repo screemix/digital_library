@@ -8,4 +8,3 @@ def index(request):
 
 # def home(request):
 #     return render(request, 'mysite/home.html')
-
