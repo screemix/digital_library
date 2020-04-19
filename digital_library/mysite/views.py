@@ -1,10 +1,14 @@
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.core.exceptions import PermissionDenied
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, redirect
 
 
 def index(request):
     return HttpResponse("Hello, world. You're at the test index.")
 
 
-# def home(request):
-#     return render(request, 'mysite/home.html')
+def main(request):
+    if request.user.is_authenticated:
+        return render(request, 'mysite/main.html')
+    else:
+        return HttpResponseRedirect('login/')
