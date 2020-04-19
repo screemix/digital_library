@@ -32,3 +32,4 @@ Token: 02c7928250a336bae475482b93b0a1ca05fe625e
 Email address: admin@example.com
 Password: 12345678
 ```
+

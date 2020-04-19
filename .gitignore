@@ -6,10 +6,11 @@ myvenv
 db.sqlite3
 /static
 .DS_Store
-.idea
+*.idea
+/idea
 /shelf/
 /workspace.xml
 /dataSources/
 /dataSources.local.xml
 /httpRequests/
-
+.env
