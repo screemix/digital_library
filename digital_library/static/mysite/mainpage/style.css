@@ -46,6 +46,14 @@ body {
     line-height: 28px;
     border: 1px solid transparent;
 }
+.logout{
+    float: right;
+    color: white;
+    font-size: 15px;
+    line-height: 28px;
+    border: 1px solid transparent;
+    padding: 0 10px;
+}
 
 .header__profile:hover {
     border-color: white;
