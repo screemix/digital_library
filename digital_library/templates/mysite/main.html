@@ -6,6 +6,9 @@
   <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/normalize.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/jquery.fancybox.min.css' %}">
   <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/style.css' %}">
+  {% block references %}
+
+  {% endblock %}
 </head>
 <body>
 <header class="header">
@@ -29,31 +32,36 @@
     </div>
   </div>
 </header>
+
+
+
 <section class="main">
   <div class="container">
     <div class="main__container">
-
-      <div class="main__header">
-        <p1>My courses</p1>
-      </div>
-
-      {% for course in Courses %}
-        <div class="main__content">
-          <div class="main__content__header">
-            <a href="course__page">
-              <p2>{{ course.Course_name }}</p2>
-            </a>
-          </div>
-          <div class="main__content__image">
-
-          </div>
+      {% block content_of_main %}
+        <div class="main__header">
+          <p1>My courses</p1>
         </div>
 
-      {% endfor %}
+        {% for course in Courses %}
+          <div class="main__content">
+            <div class="main__content__header">
+              <a href="courses/{{ course.id }}">
+                <p2>{{ course.Course_name }}</p2>
+              </a>
+            </div>
+            <div class="main__content__image">
+
+            </div>
+          </div>
+
+        {% endfor %}
+      {% endblock %}
     </div>
 
   </div>
 </section>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

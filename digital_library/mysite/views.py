@@ -15,3 +15,6 @@ def main(request):
     else:
         return HttpResponseRedirect('login/')
 
+def course(request, id):
+    course = Course.objects.get(pk=id)
+    return render(request, 'mysite/course.html', {"Course": course})

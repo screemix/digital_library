@@ -2,7 +2,7 @@ from django.db import models
 
 class Course(models.Model):
   Course_name = models.CharField(max_length=100)
-  course_info = models.TextField()
+  Course_info = models.TextField()
 
   def __str__(self):
     return self.Course_name
