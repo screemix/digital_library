@@ -14,3 +14,6 @@ from django.contrib import admin
 #
 #
 # admin.site.register(CustomUser, CustomUserAdmin)
+
+from .models import *
+admin.site.register(Course)

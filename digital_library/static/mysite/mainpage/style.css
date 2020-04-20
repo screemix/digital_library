@@ -71,6 +71,17 @@ body {
     border-color: #88b77b;
 }
 
-#modal {
-    display: none;
+.main__container{
+    padding: 10px 10px;
+}
+.main__header{
+    font-size: 20px;
+}
+.main__content{
+    padding: 10px 10px;
+    margin: 10px 10px;
+    background-color: silver;
+}
+.main__content a{
+    color: black;
 }

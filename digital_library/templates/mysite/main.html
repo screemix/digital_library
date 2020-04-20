@@ -1,43 +1,62 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
-	<head>
-		<title>Dark Site</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/normalize.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/jquery.fancybox.min.css' %}">
-		<link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/style.css' %}">
-	</head>
-	<body>
-		<header class="header"> 
-			<div class="header__top">
-				<div class="container">
-					<div class="header__logo">
-						<img src="{% static 'mysite/img/header__logo.png' %}" class="img_logo">
-					</div>
-					<a href="#" class="header__profile">Name Surname</a>
-				</div>
-			</div>
-			<div class="header__content">
-				<div class="container">
-					<nav class="menu">
-						<ul>
-							<li><a href="#" >Main</a></li>
-							<li><a href="#" >My courses</a></li>
-							<li><a href="#" >Recent Courses</a></li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
+<head>
+  <title>Dark Site</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/normalize.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'mysite/mainpage/style.css' %}">
+</head>
+<body>
+<header class="header">
+  <div class="header__top">
+    <div class="container">
+      <div class="header__logo">
+        <img src="{% static 'mysite/img/header__logo.png' %}" class="img_logo">
+      </div>
+      <a href="#" class="header__profile">Name Surname</a>
+    </div>
+  </div>
+  <div class="header__content">
+    <div class="container">
+      <nav class="menu">
+        <ul>
+          <li><a href="#">Main</a></li>
+          <li><a href="#">My courses</a></li>
+          <li><a href="#">Recent Courses</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+<section class="main">
+  <div class="container">
+    <div class="main__container">
+
+      <div class="main__header">
+        <p1>My courses</p1>
+      </div>
+
+      {% for course in Courses %}
+        <div class="main__content">
+          <div class="main__content__header">
+            <a href="course__page">
+              <p2>{{ course.Course_name }}</p2>
+            </a>
+          </div>
+          <div class="main__content__image">
+
+          </div>
+        </div>
+
+      {% endfor %}
+    </div>
+
+  </div>
+</section>
 
 
-		<div id="modal">
-			<h2>Hello!</h2>
-			<p>You are awesome</p>
-		</div>
-
-
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-		<script type="text/javascript" src="{% static 'mysite/js/main.js' %}"></script>
-	</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'mysite/js/main.js' %}"></script>
+</body>
 </html>

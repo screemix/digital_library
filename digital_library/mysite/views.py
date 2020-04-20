@@ -1,6 +1,7 @@
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
+from .models import *
 
 
 def index(request):
@@ -9,6 +10,8 @@ def index(request):
 
 def main(request):
     if request.user.is_authenticated:
-        return render(request, 'mysite/main.html')
+        Courses = Course.objects.all()
+        return render(request, 'mysite/main.html', {"Courses": Courses})
     else:
         return HttpResponseRedirect('login/')
+
