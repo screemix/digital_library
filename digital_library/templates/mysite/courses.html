@@ -1,0 +1,23 @@
+{% extends 'mysite/main.html' %}
+{% load static %}
+{% block references %}
+  <link rel="stylesheet" type="text/css" href="{% static 'mysite/coursepage/style.css' %}">
+{% endblock %}
+
+{% block content_of_main %}
+
+  <div>
+    <h1><a> All available courses </a></h1>
+</div>
+
+{% for c in courses %}
+    <div>
+        <h2>Course name: <a href="">{{ c.course_name }}</a></h2>
+        <p>Published: {{ c.published_date }}</p>
+        <p>Season: {{ c.season}}</p>
+        <p>{{c.course_info}}</p>
+
+    </div>
+{% endfor %}
+
+{% endblock %}
