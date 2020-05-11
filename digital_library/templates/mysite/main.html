@@ -14,16 +14,16 @@
 					<div class="header__logo">
 						<img src="{% static 'mysite/img/header__logo.png' %}" class="img_logo">
 					</div>
-					<a href="#" class="header__profile">Name Surname</a>
+					<a href="/logout" class="logout">logout</a>
+					<a href="#" class="header__profile">{{user.first_name}} {{user.last_name}}</a>
 				</div>
 			</div>
 			<div class="header__content">
 				<div class="container">
 					<nav class="menu">
 						<ul>
-							<li><a href="#" >Main</a></li>
-							<li><a href="#" >My courses</a></li>
-							<li><a href="#" >Recent Courses</a></li>
+							<li><a href="/" >Main</a></li>
+							<li><a href="/courses/" >All courses</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -31,15 +31,19 @@
 		</header>
 
 
-		<div id="modal">
-			<h2>Hello!</h2>
-			<p>You are awesome</p>
-		</div>
-
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script type="text/javascript" src="{% static 'mysite/js/main.js' %}"></script>
 	{% block content_of_main %}
+		<div class="container">
+			<div class="main_hi">
+				<h1 >Welcome to Digital Library</h1>
+
+				<h2>Here you can find all materials related to your study courses.</h2>
+
+				<h2> Check your course list!</h2>
+			</div>
+		</div>
 	{% endblock %}
 	</body>
 </html>

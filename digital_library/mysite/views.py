@@ -11,15 +11,20 @@ def index(request):
 def main(request):
     if request.user.is_authenticated:
         Courses = Course.objects.all()
-        return render(request, 'mysite/main.html', {"Courses": Courses})
+        user = request.user
+        return render(request, 'mysite/main.html', {"Courses": Courses, "user": user})
     else:
         return HttpResponseRedirect('login/')
+
 
 def course(request, course_id):
     crs = Course.objects.get(pk=course_id)
     books = Course_book.objects.filter(course_id_id = course_id)
-    return render(request, 'mysite/course.html', {"сourse": crs, 'books': books})
+    user = request.user
+    return render(request, 'mysite/course.html', {"сourse": crs, 'books': books, "user": user})
+
 
 def courses(request):
     crss = Course.objects.all()
-    return render(request, 'mysite/courses.html', {'courses': crss})
+    user = request.user
+    return render(request, 'mysite/courses.html', {'courses': crss, "user": user})
